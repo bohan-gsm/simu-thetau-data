@@ -1,0 +1,33 @@
+wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2019.10-Linux-x86_64.sh
+
+bash Anaconda3-2019.10-Linux-x86_64.sh
+
+source ./.bashrc
+
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/
+
+conda create -n npnb-py37 python=3.7 -y
+
+conda activate npnb-py37
+conda install numpy numba matplotlib pandas -y
+
+vim thetau-simulation-CEVSV-model-20200208-ultrafast
+# press i into insert mode
+# copy source code
+# press ctrl+:, input wq!, press enter
+mv thetau-simulation-CEVSV-model-20200208-ultrafast thetau-simulation-CEVSV-model-20200208-ultrafast.py
+conda activate npnb-py37
+python thetau-simulation-CEVSV-model-20200208-ultrafast.py
+
+
+
+vim thetau-simulation-KO-model-20200208-ultrafast
+# press i into insert mode
+# copy source code
+# press ctrl+:, input wq!, press enter
+mv thetau-simulation-KO-model-20200208-ultrafast thetau-simulation-KO-model-20200208-ultrafast.py
+conda activate npnb-py37
+python thetau-simulation-KO-model-20200208-ultrafast.py
